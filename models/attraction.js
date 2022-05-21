@@ -13,7 +13,6 @@ const commentSchema = new Schema({
 const attractionSchema = new Schema({
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   attractionName: {type: String, required: true},
-  address: {type: String, required: true}, 
   website: String,
   description: {type: String, required: true}, 
   comments: [commentSchema]
