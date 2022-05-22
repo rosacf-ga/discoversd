@@ -27,9 +27,9 @@ function App() {
     return (
       <Routes>
         <Route path="/" element={<HomePage />} />
-        <Route path="/attractions" element={<FeedPage handleLogout={handleLogout}/>} />
+        <Route path="/attractions" element={<FeedPage user={user} handleLogout={handleLogout}/>} />
         <Route path="/attractions/:attractionName" element={<ShowPage handleLogout={handleLogout}/>} />
-        <Route path="/attractions/new" element={<AttractionFormPage handleLogout={handleLogout}/>} />
+        <Route path="/attractions/new" element={<AttractionFormPage user={user} handleLogout={handleLogout}/>} />
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}

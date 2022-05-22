@@ -12,6 +12,7 @@ import {
   Message,
   Segment,
 } from "semantic-ui-react";
+import Title from '../../components/Title/Title';
 
 export default function LoginPage(props) {
   const [error, setError] = useState("");
@@ -34,7 +35,6 @@ export default function LoginPage(props) {
 
     try {
       await userService.login(state);
-      // Route to wherever you want!
       props.handleSignUpOrLogin();
       navigate("/attractions");
     } catch (err) {
@@ -45,13 +45,15 @@ export default function LoginPage(props) {
 
   return (
     <>
+      <Title />
       <Grid
         textAlign="center"
+        style={{ height: "100vh" }}
         verticalAlign="middle"
       >
         <Grid.Column style={{ maxWidth: 450 }}>
           <Header as="h2" color="teal" textAlign="center">
-            Log In to Discover San Diego
+            Log In
           </Header>
           <Form autoComplete="off" onSubmit={handleSubmit}>
             <Segment stacked>

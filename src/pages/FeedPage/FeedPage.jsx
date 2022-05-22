@@ -1,5 +1,10 @@
-export default function FeedPage(){
+import Header from '../../components/Header/Header'
+
+export default function FeedPage({user, handleLogout}){
   return(
-    <h1>This is main feed once logged in!</h1>
+    <>
+    <Header handleLogout={handleLogout} user={user}/>
+    {/* <h1>This is main feed once logged in!</h1> */}
+    </>
     )
 }

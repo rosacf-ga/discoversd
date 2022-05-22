@@ -3,6 +3,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Button, Form, Message, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
+import Title from '../../components/Title/Title';
 
 export default function SignUpPage(props) {
 
@@ -50,10 +51,12 @@ export default function SignUpPage(props) {
 
 
   return (
+    <>
+    <Title/>
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="teal" textAlign="center">
-          Sign Up to Discover San Diego
+          Sign Up
         </Header>
         <Form autoComplete="off" onSubmit={handleSubmit}>
           <Segment stacked>
@@ -112,5 +115,6 @@ export default function SignUpPage(props) {
         {error ? <ErrorMessage error={error} /> : null}
       </Grid.Column>
     </Grid>
+    </>
   );
 }
