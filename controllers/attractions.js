@@ -10,11 +10,14 @@ module.exports = {
 
 async function index(req, res){
   try {
-    const allAttractions = await Attraction.findAll({})
-    res.send(allAttractions)
-} catch (error) {
-    throw error
-}
+      // this populates the user when you find the posts
+      // so you'll have access to the users information 
+      // when you fetch teh posts
+      const attractions = await Attraction.find({}).populate('user').exec()
+      res.status(200).json({attractions})
+  } catch(err){
+
+  }
 }
 
 function create(req, res){
@@ -24,12 +27,16 @@ function create(req, res){
       const params = {Bucket: process.env.BUCKET_NAME, Key: filePath, Body: req.file.buffer};
       s3.upload(params, async function(err, data){
     console.log(err, ' from aws')
-          const attraction = await Attraction.create({attractionName: req.body.attractionName, user: req.user, photoUrl: data.Location, website: req.body.website, description: req.body.description});
-          console.log(post)
-    // make sure the post we're sending back has the user populated
-    await post.populate('user');
+          const attraction = await Attraction.create({
+            user: req.user,
+            attractionName: req.body.attractionName,
+            website: req.body.website,
+            description: req.body.description,
+            photoUrl: data.Location
+          })
+    await attraction.populate('user');
   
-          res.status(201).json({post: post})
+          res.status(201).json({attraction: attraction})
       })
   } catch(err){
       console.log(err)

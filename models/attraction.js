@@ -12,13 +12,13 @@ const commentSchema = new Schema({
 //an attraction has many comments, a comment belongs to an attraction
 const attractionSchema = new Schema({
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
-  attractionName: {type: String, required: true},
+  attractionName: String,
   website: String,
   photoUrl: String,
-  description: {type: String, required: true}, 
+  description: String, 
   comments: [commentSchema]
 }, {
   timestamps: true
 })
 
-module.export = mongoose.model('Attraction', attractionSchema);
+module.exports = mongoose.model('Attraction', attractionSchema);

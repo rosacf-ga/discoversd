@@ -4,7 +4,7 @@ import "./App.css";
 import SignupPage from "../SignupPage/SignupPage";
 import LoginPage from "../LoginPage/LoginPage";
 import HomePage from '../HomePage/HomePage';
-import AttractionFormPage from '../AttractionFormPage/AttractionFormPage';
+// import AttractionFormPage from '../AttractionFormPage/AttractionFormPage';
 import FeedPage from '../FeedPage/FeedPage';
 import ShowPage from '../ShowPage/ShowPage';
 import userService from "../../utils/userService";
@@ -30,7 +30,7 @@ function App() {
         <Route path="/" element={<HomePage />} />
         <Route path="/attractions" element={<FeedPage user={user} handleLogout={handleLogout}/>} />
         <Route path="/attractions/:attractionName" element={<ShowPage handleLogout={handleLogout}/>} />
-        <Route path="/attractions/new" element={<AttractionFormPage user={user} handleLogout={handleLogout}/>} />
+        {/* <Route path="/attractions/new" element={<AttractionFormPage user={user} handleLogout={handleLogout}/>} /> */}
         <Route
           path="/login"
           element={<LoginPage handleSignUpOrLogin={handleSignUpOrLogin} />}
