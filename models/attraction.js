@@ -14,6 +14,7 @@ const attractionSchema = new Schema({
   user: {type: mongoose.Schema.Types.ObjectId, ref: 'User'},
   attractionName: {type: String, required: true},
   website: String,
+  photoUrl: String,
   description: {type: String, required: true}, 
   comments: [commentSchema]
 }, {
