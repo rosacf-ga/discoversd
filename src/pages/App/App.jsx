@@ -25,6 +25,7 @@ function App() {
 
   if (user) {
     return (
+      <>
       <Routes>
         <Route path="/" element={<HomePage />} />
         <Route path="/attractions" element={<FeedPage user={user} handleLogout={handleLogout}/>} />
@@ -39,6 +40,7 @@ function App() {
           element={<SignupPage handleSignUpOrLogin={handleSignUpOrLogin} />}
         />
       </Routes>
+      </>
     );
   }
 
