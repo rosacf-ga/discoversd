@@ -14,7 +14,6 @@ const app = express();
 // app.use(favicon(path.join(__dirname, 'build', 'favicon.ico')));
 app.use(logger("dev"));
 app.use(express.json());
-
 app.use(favicon(path.join(__dirname, "build", "favicon.ico")));
 app.use(express.static(path.join(__dirname, "build"))); // this allows express to find the build folder
 // Configure the auth middleware
@@ -23,6 +22,7 @@ app.use(express.static(path.join(__dirname, "build"))); // this allows express t
 app.use(require("./config/auth"));
 // api routes must be before the "catch all" route
 app.use("/api/users", require("./routes/api/users"));
+app.use("/api/attractions", require("./routes/api/attractions"));
 
 // "catch all" route
 app.get("/*", function (req, res) {
