@@ -1,5 +1,6 @@
 import { Card, Icon, Image } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import AttractionImage from '../AttractionImage/AttractionImage';
 
 export default function AttractionCard({attraction, user}) {
   const style = {
@@ -8,13 +9,14 @@ export default function AttractionCard({attraction, user}) {
   }
 
   return(
+    
     <Card style={style} key={attraction._id} raised>
-    {/* <Link to={`/attractions/${attraction.attractionName}`}> */}
-    <Image src={`${attraction.photoUrl}`} wrapped ui={false} />
+    <AttractionImage photoUrl={attraction.photoUrl}/>
+    {/* <Image src={`${attraction.photoUrl}`} wrapped ui={false} /> */}
     <Card.Content>
-      <Card.Header>{attraction.attractionName}</Card.Header>
+    <Link to={`/attractions/${attraction.attractionName}`}><Card.Header>{attraction.attractionName}</Card.Header></Link>
     </Card.Content>
-    {/* </Link> */}
+    
     {/* <Card.Content extra textAlign={"right"}>
       <Icon
         name={"heart"}
