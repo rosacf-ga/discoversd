@@ -30,6 +30,12 @@ export default function AttractionForm (props){
       console.log('fieldname log', fieldName, state[fieldName]);
       props.handleAddAttraction(formData);
     }
+    setState({
+      attractionName: '',
+      website: '',
+      description: ''
+    })
+    setSelectedFile('')
   }
 
 
@@ -65,60 +71,10 @@ export default function AttractionForm (props){
           type="file"
           name="photo"
           placeholder="Upload Image"
-          onChange={handleChange}
+          onChange={handleFileInput}
         />
         <button type="submit">Submit</button>
       </form>
       </>
-
-    // <Grid textAlign='center' style={{ height: '25vh' }} verticalAlign='middle'>
-    //   <Grid.Column style={{ maxWidth: 450 }}>
-    //     <Header as="h2" textAlign="center">Add a New Attraction</Header>
-    //     <Segment>
-    //         <Form  autoComplete="off" onSubmit={handleSubmit}>
-    //           <Form.Input
-    //               className="form-control"
-    //               name="attractionName"
-    //               type="text"
-    //               value={state.attractionName}
-    //               placeholder="Name of Attraction"
-    //               onChange={handleChange}
-    //               required
-    //           />   
-    //           <Form.Input
-    //               className="form-control"
-    //               name="website"
-    //               type="text"
-    //               value={state.website}
-    //               placeholder="Website URL"
-    //               onChange={handleChange}
-    //               required
-    //           />  
-    //           <Form.TextArea
-    //               className="form-control"
-    //               name="description"
-    //               type="text"
-    //               value={state.description}
-    //               placeholder="Short Description"
-    //               onChange={handleChange}
-    //               required
-    //           />  
-    //           <Form.Input
-    //             className="form-control"
-    //             type="file"
-    //             name="photo"
-    //             placeholder="Upload Image"
-    //             onChange={handleFileInput}
-    //           />   
-    //           <Button
-    //             type="submit"
-    //             className="btn"
-    //           >
-    //             ADD ATTRACTION
-    //           </Button>
-    //         </Form>
-    //       </Segment>
-    //   </Grid.Column>
-    // </Grid>
   )
 }
