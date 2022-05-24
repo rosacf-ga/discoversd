@@ -7,6 +7,7 @@ const upload = multer(); // <- handles multipart/formdata requests(photos)
 // /*---------- Public Routes ----------*/
 router.post('/', upload.single('photo'), attractionsCtrl.create);
 router.get('/', attractionsCtrl.index)
+router.get('/:id', attractionsCtrl.show);
 
 
 /*---------- Protected Routes ----------*/
