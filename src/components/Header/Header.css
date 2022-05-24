@@ -1,0 +1,21 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&display=swap');
+
+nav {
+  display: flex;
+  margin: 10px;
+  font-size: 17px;
+  font-weight: 700;
+  font-family: 'Hind Guntur';
+  justify-content: flex-end;
+  
+}
+
+.link {
+  padding: 10px;
+  color: rgb(46, 46, 46);
+}
+
+.link:hover{
+  color:rgb(46, 46, 46);
+  text-shadow: 1px 1px 2px gray;
+}

@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Hind+Guntur&display=swap');
+
+.title {
+  text-align: center;
+  color: rgb(46, 46, 46);
+  font-weight: 600;
+  font-size: 20px;
+  font-family: 'Hind Guntur', sans-serif;
+  text-transform: uppercase;
+  text-shadow: 1px 1px 1px gray;
+}
+
+.title:hover{
+  color: rgb(100, 152, 141);
+}

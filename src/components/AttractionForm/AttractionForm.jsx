@@ -1,5 +1,7 @@
 import { useState } from 'react';
 import { Button, Form, Header, Grid, Segment } from 'semantic-ui-react';
+import { useNavigate } from "react-router-dom";
+import './AttractionForm.css';
 
 export default function AttractionForm (props){
   const [selectedFile, setSelectedFile] = useState('')
@@ -20,6 +22,8 @@ export default function AttractionForm (props){
     })
   }
 
+  
+
   function handleSubmit(e){
     e.preventDefault()
     console.log(state, '<-this is the state object')
@@ -28,21 +32,17 @@ export default function AttractionForm (props){
     for (let fieldName in state){
       formData.append(fieldName, state[fieldName])
       console.log('fieldname log', fieldName, state[fieldName]);
-      props.handleAddAttraction(formData);
     }
-    setState({
-      attractionName: '',
-      website: '',
-      description: ''
-    })
-    setSelectedFile('')
+    props.handleAddAttraction(formData);
   }
 
 
   return(
     <>
     <h2>Add a New Attraction</h2>
+    <div className='form'>
     <form autoComplete="off" onSubmit={handleSubmit}>
+      <label>Attraction</label>
         <input
           type="text"
           name="attractionName"
@@ -52,6 +52,7 @@ export default function AttractionForm (props){
           onChange={handleChange} //onChange is built in event listener
           //everytime press a key, it will trigger onChange
         />
+        <label>Website</label>
         <input
           type="text"
           name="website"
@@ -59,6 +60,7 @@ export default function AttractionForm (props){
           value={state.website}
           onChange={handleChange}
         />
+        <label>Description</label>
         <textarea
           type="text"
           name="description"
@@ -67,14 +69,17 @@ export default function AttractionForm (props){
           cols="42"
           rows="7"
           onChange={handleChange}></textarea>
+        <label>Upload an Image</label>
         <input
           type="file"
           name="photo"
           placeholder="Upload Image"
           onChange={handleFileInput}
         />
-        <button type="submit">Submit</button>
+        <button type="submit">CREATE</button>
       </form>
+      </div>
       </>
+
   )
 }
