@@ -1,6 +1,6 @@
 import tokenService from './tokenService';
 
-const BASE_URL = '/api/attractions';
+const BASE_URL = '/api/attractions/';
 
 export function create(attraction) {
   return fetch(BASE_URL, {
@@ -23,6 +23,18 @@ export function getAll() {
     }
   })
   .then(res => {
+    if(res.ok) return res.json();
+    throw new Error('Bad Credentials! CHECK THE SERVER TERMINAL!')
+  })
+}
+
+export function getAttraction(attractionName){
+  console.log(attractionName)
+  return fetch(BASE_URL + attractionName, {
+    headers: {
+      Authorization: "Bearer " + tokenService.getToken(),
+    }
+  }).then(res => {
     if(res.ok) return res.json();
     throw new Error('Bad Credentials! CHECK THE SERVER TERMINAL!')
   })

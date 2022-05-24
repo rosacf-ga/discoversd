@@ -11,18 +11,18 @@ export default function FeedPage({ user, handleLogout }) {
   const [attractions, setAttractions] = useState([]);
   const [error, setError] = useState("");
 
-  async function handleAddAttraction(attraction) {
-    try {
-      const data = await attractionApi.create(attraction); // our server is going to return
-      // the created post, that will be inside of data, which is the response from
-      // the server, we then want to set it in state
-      console.log(data, " this is response from the server, in handleAddPost");
-      setAttractions([data.attraction, ...attractions]);
-    } catch (err) {
-      console.log(err);
-      setError(err.message);
-    }
-  }
+  // async function handleAddAttraction(attraction) {
+  //   try {
+  //     const data = await attractionApi.create(attraction); // our server is going to return
+  //     // the created post, that will be inside of data, which is the response from
+  //     // the server, we then want to set it in state
+  //     console.log(data, " this is response from the server, in handleAddPost");
+  //     setAttractions([data.attraction, ...attractions]);
+  //   } catch (err) {
+  //     console.log(err);
+  //     setError(err.message);
+  //   }
+  // }
 
   // R read in crud
   async function getAttractions() {
@@ -69,7 +69,7 @@ export default function FeedPage({ user, handleLogout }) {
     </Grid.Row>
     <Grid.Row>
       <Grid.Column style={{ maxWidth: 450 }}>
-        <AttractionForm handleAddAttraction={handleAddAttraction} />
+        {/* <AttractionForm handleAddAttraction={handleAddAttraction} /> */}
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
