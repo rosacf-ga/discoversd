@@ -5,7 +5,8 @@ const s3 = new S3();
 
 module.exports = {
     create,
-    index
+    index, 
+    show
 }
 
 async function index(req, res){
@@ -41,5 +42,18 @@ function create(req, res){
   } catch(err){
       console.log(err)
       res.json({data: err})
+  }
+}
+
+async function show(req, res){
+  console.log(req.params.id, 'this is from controller')
+  try {
+    const attraction = await Attraction.findOne({attractionName: req.params.id})
+    if(!attraction) return res.status(404).json({err: 'Attraction not found'})
+    res.status(200).json({attraction: attraction})
+    console.log(attraction)
+  } catch(err){
+    console.log(err)
+    res.status(400).json({err})
   }
 }
