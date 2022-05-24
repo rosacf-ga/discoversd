@@ -12,7 +12,6 @@ export default function AttractionCard({attraction, user}) {
     
     <Card style={style} key={attraction._id} raised>
     <AttractionImage photoUrl={attraction.photoUrl}/>
-    {/* <Image src={`${attraction.photoUrl}`} wrapped ui={false} /> */}
     <Card.Content>
     <Link to={`/attractions/${attraction.attractionName}`}><Card.Header>{attraction.attractionName}</Card.Header></Link>
     </Card.Content>
