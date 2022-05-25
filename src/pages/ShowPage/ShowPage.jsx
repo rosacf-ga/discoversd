@@ -44,7 +44,9 @@ export default function ShowPage({user, handleLogout}){
     </div>
     <div>
     <div className='description'>{attractions.description}</div>
+    <div className="detail-btn">
     <a href={attractions.website} target='_blank'><button>LEARN MORE</button></a>
+    </div>
     </div>
     </div>
     </>

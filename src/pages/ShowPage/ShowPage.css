@@ -11,3 +11,11 @@
   line-height: 1.8em;
   margin-bottom: 30px;
 }
+
+.detail-btn{
+  margin-left: -80px;
+}
+
+.detail-btn button {
+  padding: 9px 8px;
+}
