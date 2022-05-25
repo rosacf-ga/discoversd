@@ -41,20 +41,16 @@ function create(req, res){
           res.status(201).json({attraction: attraction})
       })
   } catch(err){
-      console.log(err)
       res.json({data: err})
   }
 }
 
 async function show(req, res){
-  console.log(req.params.id, 'this is from controller')
   try {
     const attraction = await Attraction.findOne({attractionName: req.params.id})
     if(!attraction) return res.status(404).json({err: 'Attraction not found'})
     res.status(200).json({attraction: attraction})
-    console.log(attraction)
   } catch(err){
-    console.log(err)
     res.status(400).json({err})
   }
 }
@@ -64,7 +60,6 @@ async function deleteAttraction(req, res){
     const attraction = await Attraction.findByIdAndDelete(req.params.id)
     res.status(200).json({attraction})
   } catch(err) {
-      console.log(err, "from deleteAttraction controller")
       res.json(err);
   }
 }
