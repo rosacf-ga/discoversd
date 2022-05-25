@@ -45,53 +45,30 @@ export default function LoginPage(props) {
 
   return (
     <>
-      <div className='login-title'>
+      <div className="signup">
       <Title />
-      </div>
-      <Grid
-        textAlign="center"
-        style={{ height: "100vh" }}
-        verticalAlign="middle"
-      >
-        <Grid.Column style={{ maxWidth: 450 }}>
-          <Header as="h2" color="teal" textAlign="center">
-            Log In
-          </Header>
-          <Form autoComplete="off" onSubmit={handleSubmit}>
-            <Segment stacked>
-              <Form.Input
-                type="username"
-                name="username"
-                placeholder="username"
-                value={state.username}
-                onChange={handleChange}
-                required
-              />
-              <Form.Input
-                name="password"
-                type="password"
-                placeholder="password"
-                value={state.password}
-                onChange={handleChange}
-                required
-              />
-              <Button
-                color="teal"
-                fluid
-                size="large"
-                type="submit"
-                className="btn"
-              >
-                Log In
-              </Button>
-            </Segment>
-          </Form>
-          <Message>
-            New to us? <Link to="/signup">Sign Up</Link>
-          </Message>
-          {error ? <ErrorMessage error={error} /> : null}
-        </Grid.Column>
-      </Grid>
-    </>
+      <h2>Log In</h2>
+    <div className='addform'>
+    <form autoComplete="off" onSubmit={handleSubmit}>
+      <label>Username</label>
+        <input
+          type="text"
+          name="username"
+          value={state.username} 
+          onChange={handleChange} //everytime press a key, it will trigger onChange
+        />
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
+        <button type="submit">LOG IN</button>
+        </form>
+        </div>
+        <div className='alt-link'>New to us? <Link to="/signup" className='logsign-link'>Sign Up</Link></div>
+        </div>
+        </>
   );
 }

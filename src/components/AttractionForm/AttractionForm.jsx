@@ -47,9 +47,8 @@ export default function AttractionForm (props){
           type="text"
           name="attractionName"
           placeholder="Name of Attraction"
-          value={state.attractionName} //want our state to reflect the value
-          //gotta use dot notation and match keys we have in state object
-          onChange={handleChange} //onChange is built in event listener
+          value={state.attractionName} 
+          onChange={handleChange}
           //everytime press a key, it will trigger onChange
         />
         <label>Website</label>

@@ -2,21 +2,24 @@
 
 nav {
   display: flex;
-  margin: 10px;
+  margin: 0;
+  padding: 4px 8px;
   font-size: 18px;
   font-weight: 700;
   font-family: 'Hind Guntur';
   justify-content: flex-end;
+  background-color: rgba(251, 251, 251, 0.2);
+  box-shadow: 3px 3px 4px gray;
   
 }
 
 .link {
   padding: 10px;
-  color: white;
-  text-shadow: 2px 2px 3px black;
+  color: rgb(255, 255, 255);
+  text-shadow: 2px 2px 3px rgb(56, 56, 56);
 }
 
 .link:hover{
-  color:rgb(46, 46, 46);
+  color:rgb(81, 81, 81);
   text-shadow: 1px 1px 2px gray;
 }

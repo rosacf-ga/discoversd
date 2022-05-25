@@ -3,7 +3,13 @@
 }
 
 .login-signup-btn {
-  margin-left: 39%;
+  margin-left: 42%;
   margin-top: 80px;
   width: 300px;
+}
+
+.login-signup-btn button {
+  width: 160px;
+  margin-bottom: 30px;
+  padding: 10px 30px;
 }

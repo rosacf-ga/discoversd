@@ -1,3 +1,29 @@
 .login-title{
   margin: 90px 0 -150px;
 }
+
+.signup button {
+  display: block;
+  margin-top: 30px;
+}
+
+.alt-link{
+  margin: 18px 0 0;
+  font-size: 15px;
+  font-family: 'Hind Guntur';
+  color: white;
+  text-shadow: 1px 1px 2px black;
+  text-align: center;
+}
+
+.logsign-link {
+  color: white;
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px black;
+}
+
+.logsign-link:hover {
+  color: rgb(79, 79, 79);
+  text-decoration: underline;
+  text-shadow: 1px 1px 2px rgb(54, 54, 54);
+}

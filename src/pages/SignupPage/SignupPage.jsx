@@ -28,8 +28,7 @@ export default function SignUpPage(props) {
       formData.append(fieldName, state[fieldName])
     }
     try {
-      await userService.signup(formData) // <- we must pass the argument as formData when we have a
-      // photo
+      await userService.signup(formData) // <- we must pass the argument as formData when we have a photo
       props.handleSignUpOrLogin(); // <- this will decode the token from local storage
       navigate('/attractions')
     } catch(err){
@@ -54,70 +53,51 @@ export default function SignUpPage(props) {
   return (
     <>
     <div className="signup">
-    <Title/>
-    </div>
-    <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
-      <Grid.Column style={{ maxWidth: 450 }}>
-        <Header as="h2" color="teal" textAlign="center">
-          Sign Up
-        </Header>
-        <Form autoComplete="off" onSubmit={handleSubmit}>
-          <Segment stacked>
-            <Form.Input
-              name="username"
-              placeholder="username"
-              value={state.username}
-              onChange={handleChange}
-              required
-            />
-            <Form.Input
-              type="email"
-              name="email"
-              placeholder="email"
-              value={state.email}
-              onChange={handleChange}
-              required
-            />
-            <Form.Input
-              name="password"
-              type="password"
-              placeholder="password"
-              value={state.password}
-              onChange={handleChange}
-              required
-            />
-            <Form.Input
-              name="passwordConf"
-              type="password"
-              placeholder="Confirm Password"
-              value={state.passwordConf}
-              onChange={handleChange}
-              required
-            />
-            <Form.Field>
-              <Form.Input
-                type="file"
-                name="photo"
-                placeholder="upload image"
-                onChange={handleFileInput}
-              />
-            </Form.Field>
-            <Button 
-                color="teal"
-                fluid
-                size="large"
-                type="submit"
-                className="btn">
-                Sign Up
-            </Button>
-          </Segment>
-          </Form>
-          <Message>
-            Already have an account? <Link to="/login">Log In</Link>
-          </Message>
-        {error ? <ErrorMessage error={error} /> : null}
-      </Grid.Column>
-    </Grid>
-    </>
+    <Title />
+    <h2>Sign Up</h2>
+    <div className='addform'>
+    <form autoComplete="off" onSubmit={handleSubmit}>
+      <label>Username</label>
+        <input
+          type="text"
+          name="username"
+          value={state.username} 
+          onChange={handleChange}
+          //everytime press a key, it will trigger onChange
+        />
+        <label>Email</label>
+        <input
+          type="text"
+          name="email"
+          value={state.email}
+          onChange={handleChange}
+        />
+        <label>Password</label>
+        <input
+          type="password"
+          name="password"
+          value={state.password}
+          onChange={handleChange}
+        />
+        <label>Confirm Password</label>
+        <input
+          type="password"
+          name="passwordConf"
+          value={state.passwordConf}
+          onChange={handleChange}
+        />
+        <label>Upload a Profile Photo</label>
+        <input
+          type="file"
+          name="photo"
+          placeholder="Upload Image"
+          onChange={handleFileInput}
+        />
+        <button type="submit">SIGN UP</button>
+      </form>
+      </div>
+      <div className='alt-link'>Already have an account? <Link to="/login" className='logsign-link'>Log In</Link></div>
+      </div>
+      </>
   );
 }

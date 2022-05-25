@@ -9,8 +9,8 @@ export default function HomePage(){
     <Title/>
     </div>
     <div className="login-signup-btn">
-    <Link to='/login'><button>Log In</button></Link>
-    <Link to='/signup'><button>Sign Up</button></Link>
+    <Link to='/login'><button>LOG IN</button></Link>
+    <Link to='/signup'><button>SIGN UP</button></Link>
     </div>
     </>
   )
