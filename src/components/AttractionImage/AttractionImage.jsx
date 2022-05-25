@@ -1,7 +1,8 @@
 import { Image } from 'semantic-ui-react';
+import './AttractionImage.css';
 
 export default function AttractionImage({photoUrl}){
   return (
-    <Image src={`${photoUrl}`} wrapped ui={false} />
+    <img src={`${photoUrl}`} />
   )
 }

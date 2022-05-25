@@ -40,7 +40,7 @@ export default function AttractionForm (props){
   return(
     <>
     <h2>Add a New Attraction</h2>
-    <div className='form'>
+    <div className='addform'>
     <form autoComplete="off" onSubmit={handleSubmit}>
       <label>Attraction</label>
         <input

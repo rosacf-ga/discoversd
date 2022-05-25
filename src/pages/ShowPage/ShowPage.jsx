@@ -5,6 +5,7 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import * as attractionApi from '../../utils/attractionApi';
 import { useParams } from "react-router-dom";
 import { Link } from "react-router-dom";
+import './ShowPage.css';
 
 export default function ShowPage({user, handleLogout}){
   const [error, setError] = useState("");
@@ -37,9 +38,15 @@ export default function ShowPage({user, handleLogout}){
     <>
     <Header handleLogout={handleLogout} user={user}/>
     <h2>{attractionName}</h2>
+    <div className="detail-container">
+    <div>
     <AttractionImage photoUrl={attractions.photoUrl} />
-    <div>{attractions.description}</div>
-    <a href={attractions.website}><button>LEARN MORE</button></a>
+    </div>
+    <div>
+    <div className='description'>{attractions.description}</div>
+    <a href={attractions.website} target='_blank'><button>LEARN MORE</button></a>
+    </div>
+    </div>
     </>
   )
 }

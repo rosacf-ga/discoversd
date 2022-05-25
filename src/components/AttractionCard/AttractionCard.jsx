@@ -5,7 +5,7 @@ import './AttractionCard.css';
 
 export default function AttractionCard({attraction, user}) {
   const card = {
-    'width': '500px',
+    'width': '530px',
     'margin': '10px auto'
   }
 

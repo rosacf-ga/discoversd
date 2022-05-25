@@ -3,7 +3,7 @@
 nav {
   display: flex;
   margin: 10px;
-  font-size: 17px;
+  font-size: 18px;
   font-weight: 700;
   font-family: 'Hind Guntur';
   justify-content: flex-end;
@@ -12,7 +12,8 @@ nav {
 
 .link {
   padding: 10px;
-  color: rgb(46, 46, 46);
+  color: white;
+  text-shadow: 2px 2px 3px black;
 }
 
 .link:hover{

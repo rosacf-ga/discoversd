@@ -1,0 +1,13 @@
+.detail-container{
+  display: flex;
+  margin: 0 10%;
+  gap: 40px;
+  background-color: white;
+  padding: 20px;
+}
+
+.description {
+  font-size: 20px;
+  line-height: 1.8em;
+  margin-bottom: 30px;
+}

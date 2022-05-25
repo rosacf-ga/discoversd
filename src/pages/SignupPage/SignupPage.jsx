@@ -4,6 +4,7 @@ import { Button, Form, Message, Grid, Header, Image, Segment } from 'semantic-ui
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
 import Title from '../../components/Title/Title';
+import './SignupPage.css';
 
 export default function SignUpPage(props) {
 
@@ -52,7 +53,9 @@ export default function SignUpPage(props) {
 
   return (
     <>
+    <div className="signup">
     <Title/>
+    </div>
     <Grid textAlign="center" style={{ height: "100vh" }} verticalAlign="middle">
       <Grid.Column style={{ maxWidth: 450 }}>
         <Header as="h2" color="teal" textAlign="center">
