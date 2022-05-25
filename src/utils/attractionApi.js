@@ -39,3 +39,13 @@ export function getAttraction(attractionName){
     throw new Error('Bad Credentials! CHECK THE SERVER TERMINAL!')
   })
 }
+
+export function deleteAttraction(id){
+  return fetch(`${BASE_URL}${id}`, {
+      method: 'DELETE',
+      headers: {
+          'Authorization': 'Bearer ' + tokenService.getToken()
+      }
+  })
+  .then(res => res.json());
+}

@@ -1,9 +1,9 @@
 import React from 'react';
-import { Card, Dimmer, Segment, Image  } from 'semantic-ui-react'
+import { Card, Dimmer, Segment, Image  } from 'semantic-ui-react';
 import AttractionCard from '../AttractionCard/AttractionCard';
-import './AttractionGalley.css'
+import './AttractionGalley.css';
 
-export default function AttractionFeed({attractions, numPhotosCol, user }){
+export default function AttractionFeed({attractions, deleteAttraction, numPhotosCol, user }){
 
     return (
       <div className='card-section'>
@@ -13,9 +13,8 @@ export default function AttractionFeed({attractions, numPhotosCol, user }){
             <AttractionCard
               attraction={attraction}
               key={attraction._id}
-              // addLike={addLike}
-              // removeLike={removeLike}
               user={user}
+              deleteAttraction={deleteAttraction}
             />
           );
         })}

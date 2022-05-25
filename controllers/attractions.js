@@ -6,7 +6,8 @@ const s3 = new S3();
 module.exports = {
     create,
     index, 
-    show
+    show,
+    delete: deleteAttraction
 }
 
 async function index(req, res){
@@ -55,5 +56,15 @@ async function show(req, res){
   } catch(err){
     console.log(err)
     res.status(400).json({err})
+  }
+}
+
+async function deleteAttraction(req, res){
+  try{
+    const attraction = await Attraction.findByIdAndDelete(req.params.id)
+    res.status(200).json({attraction})
+  } catch(err) {
+      console.log(err, "from deleteAttraction controller")
+      res.json(err);
   }
 }

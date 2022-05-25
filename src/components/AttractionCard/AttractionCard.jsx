@@ -3,12 +3,16 @@ import { Link } from "react-router-dom";
 import AttractionImage from '../AttractionImage/AttractionImage';
 import './AttractionCard.css';
 
-export default function AttractionCard({attraction, user}) {
+export default function AttractionCard({attraction, deleteAttraction, user}) {
   const card = {
     'width': '530px',
     'margin': '10px auto'
   }
 
+  let clickHandler = null;
+  if (user) {
+      clickHandler = attraction.user._id === user._id ? () => deleteAttraction(attraction._id) : null;
+  }
 
   return(
     
@@ -17,16 +21,14 @@ export default function AttractionCard({attraction, user}) {
     <Card.Content>
     <Link to={`/attractions/${attraction.attractionName}`}><Card.Header className='title'>{attraction.attractionName}</Card.Header></Link>
     </Card.Content>
-    
-    {/* <Card.Content extra textAlign={"right"}>
-      <Icon
-        name={"heart"}
-        size="large"
-        color={likeColor}
-        onClick={clickHandler}
-      />
-      {post.likes.length} Likes
-    </Card.Content> */}
+    {user && user._id === attraction.user._id ?
+    <Card.Content extra textAlign={"right"}>
+    <Icon
+      name={"trash alternate outline"}
+      size="large"
+      onClick={clickHandler}
+    />
+  </Card.Content> : "" }
   </Card>
 );
 }
