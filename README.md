@@ -1,37 +1,32 @@
-## Setup 
+# **Discover San Diego**
+**Discover San Diego** is a web application that allows authenticated users to browse through different places and attractions in San Diego in preparation for their visit to California's finest city! Additionally, users are able to create a new attraction and delete an attraction if they created it.
 
-1. Clone the repo
-2. Rename the folder to your Project, you can use the `mv` command like `mv mern-boilerplate yourprojectname`
-3. Delete the `.git` file, when you are in the root of the file, you can press `ls` and you should see a `.git` file, then go ahead and run `rm -rf .git`
+ 
+## **Screenshots**
+![Home page](https://i.imgur.com/TbpM3rv.png)
+![Feed page](https://i.imgur.com/GWry0SQ.png)
+![Attraction detail page](https://i.imgur.com/FXNgybg.png)
+![Add attraction form](https://i.imgur.com/PP2hQlA.png)
 
 
-#### Setup your git repo
+## **Technologies Used**
+- **MongoDB** - used as the database to store all of our data 
+- **Express/Node.js** - used as the backend framework
+- **React** - used as the frontend framework
+- **React Semantic UI** - used to add styling to my react components
+- **CSS** - used to add additional styling throughout my application
+- **Heroku** - used to deploy my application
+- **AWS** - used to store the photos that have been uploaded by users
 
-1. go to github and create your github and create a repo (Without a readme or liscense you can add that later!)
-2. Then you can run the following commands in the root of your project 
 
-```
-git init
-git add .
-git commit -m "first commit"
-git remote add origin git@git.generalassemb.ly:SEI-CC/test.git // this will be whatever your address will be, look at the address in the code github gives you!
-git push -u origin main
-```
+## **Getting Started**
+Visit **Discover San Diego** [here](https://discoversd.herokuapp.com/)
 
-#### Setup the App
+Check out my Trello planning board [here](https://trello.com/b/zSmCcskq/project-4)
 
-```npm install```
-
-*DOTENV*
-
-`touch .env`
-
-add your variables
-
-```
-DATABASE_URL=mongodb://localhost:27017/testagramV2
-BUCKET_NAME=catcollectorone
-SECRET=mysecretforjwt
-```
-
-The app is configured, to use those respective key names for the database, jwt secret and aws bucket, of course you'll have your own values
+ 
+## **Next Steps** 
+- Allow users to leave comments about an atraction in an attraction's detail page
+- Allow users to be able to filter their results based on type of activity, price range, etc.
+- Allow users to be able to favorite an attraction and have it be stored in a 'Favorites' section
+- Add additional styling to create a mobile-friendly design
