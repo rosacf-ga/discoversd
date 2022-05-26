@@ -1,1 +1,1 @@
-web: node server.jsssq
+web: node server.js
