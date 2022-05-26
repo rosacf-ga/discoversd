@@ -26,6 +26,7 @@ export default function AttractionCard({attraction, deleteAttraction, user}) {
     {user && user._id === attraction.user._id ?
     <Card.Content extra textAlign={"right"}>
     <Icon
+      className='trash'
       name={"trash alternate outline"}
       size="large"
       onClick={clickHandler}

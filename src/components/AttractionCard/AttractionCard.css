@@ -13,3 +13,8 @@
 .title:hover{
   color: rgb(137, 196, 183);
 }
+
+.trash:hover{
+  cursor: pointer;
+  color: black;
+}
