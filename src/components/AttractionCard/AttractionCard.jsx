@@ -28,7 +28,7 @@ export default function AttractionCard({attraction, deleteAttraction, user}) {
     <Icon
       className='trash'
       name={"trash alternate outline"}
-      size="large"
+      // size="large"
       onClick={clickHandler}
     />
   </Card.Content> : "" }
