@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react";
 import PageHeader from "../../components/Header/Header";
+import SearchBar from '../../components/SearchBar/SearchBar';
 import * as attractionApi from "../../utils/attractionApi";
 import AttractionGallery from "../../components/AttractionGallery/AttractionGallery";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
@@ -8,6 +9,7 @@ import { Grid } from "semantic-ui-react";
 export default function FeedPage({ user, handleLogout }) {
   const [attractions, setAttractions] = useState([]);
   const [error, setError] = useState("");
+  const [filterText, setFilterText] = useState('');
 
   // R read in crud
   async function getAttractions() {
@@ -46,11 +48,24 @@ export default function FeedPage({ user, handleLogout }) {
     );
   }
 
+  function handleChange(e){
+    setFilterText(...filterText, e.target.value)
+  }
+
+
   return (
   <Grid centered>
     <Grid.Row>
       <Grid.Column>
         <PageHeader handleLogout={handleLogout} user={user}/>
+      </Grid.Column>
+    </Grid.Row>
+    <Grid.Row>
+      <Grid.Column>
+        <SearchBar 
+        filterText={filterText} 
+        onFilterTextChange={setFilterText} 
+        onChange={handleChange}/>
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>
@@ -60,11 +75,11 @@ export default function FeedPage({ user, handleLogout }) {
           numPhotosCol={3}
           deleteAttraction={deleteAttraction}
           user={user}
+          filterText={filterText}
+          onFilterTextChange={setFilterText}
         />
       </Grid.Column>
     </Grid.Row>
   </Grid>
-
-
   );
 }

@@ -1,0 +1,7 @@
+.searchbar input[type=text]{
+  margin: 0 auto;
+  border: solid 1px black;
+  border-radius: 13px;
+  padding: 7px;
+  width: 235px;
+}
