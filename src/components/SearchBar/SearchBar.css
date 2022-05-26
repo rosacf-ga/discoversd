@@ -1,5 +1,5 @@
 .searchbar input[type=text]{
-  margin: 0 auto;
+  margin: 10px auto 14px;
   border: solid 1px black;
   border-radius: 13px;
   padding: 7px;
