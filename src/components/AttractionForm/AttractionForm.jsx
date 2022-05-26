@@ -1,6 +1,4 @@
 import { useState } from 'react';
-import { Button, Form, Header, Grid, Segment } from 'semantic-ui-react';
-import { useNavigate } from "react-router-dom";
 import './AttractionForm.css';
 
 export default function AttractionForm (props){
@@ -22,16 +20,13 @@ export default function AttractionForm (props){
     })
   }
 
-  
 
   function handleSubmit(e){
     e.preventDefault()
-    console.log(state, '<-this is the state object')
     const formData = new FormData()
     formData.append('photo', selectedFile);
     for (let fieldName in state){
       formData.append(fieldName, state[fieldName])
-      console.log('fieldname log', fieldName, state[fieldName]);
     }
     props.handleAddAttraction(formData);
   }

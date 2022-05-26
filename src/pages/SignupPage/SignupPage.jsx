@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
-import { Button, Form, Message, Grid, Header, Image, Segment } from 'semantic-ui-react'
 import userService from "../../utils/userService";
 import { useNavigate, Link } from "react-router-dom";
 import Title from '../../components/Title/Title';
@@ -45,7 +44,6 @@ export default function SignUpPage(props) {
   }
 
   function handleFileInput(e){
-    console.log(e.target.files);
     setSelectedFile(e.target.files[0]);
   }
 

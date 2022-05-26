@@ -15,7 +15,6 @@ export default function AddAttractionPage({user, handleLogout}){
       const data = await attractionApi.create(attraction); // our server is going to return
       // the created post, that will be inside of data, which is the response from
       // the server, we then want to set it in state
-      console.log(data, " this is response from the server, in handleAddPost");
       setAttractions([data.attraction, ...attractions]);
       navigate('/attractions');
     } catch (err) {

@@ -4,7 +4,6 @@ import AttractionImage from '../../components/AttractionImage/AttractionImage';
 import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import * as attractionApi from '../../utils/attractionApi';
 import { useParams } from "react-router-dom";
-import { Link } from "react-router-dom";
 import './ShowPage.css';
 
 export default function ShowPage({user, handleLogout}){
@@ -18,7 +17,6 @@ export default function ShowPage({user, handleLogout}){
   async function getAttraction() {
     try {
       const data = await attractionApi.getAttraction(attractionName);
-      console.log(data, " < -- data");
       // .attraction coming from 'show' controller function
       setAttractions(() => data.attraction);
     } catch (err) {
@@ -31,8 +29,6 @@ export default function ShowPage({user, handleLogout}){
     getAttraction();
   }, []);
 
-  console.log('show page stuff')
-  console.log(attractions.photoUrl)
 
   return(
     <>

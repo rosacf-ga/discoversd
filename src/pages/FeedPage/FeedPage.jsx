@@ -6,7 +6,6 @@ import ErrorMessage from "../../components/ErrorMessage/ErrorMessage";
 import { Grid } from "semantic-ui-react";
 
 export default function FeedPage({ user, handleLogout }) {
-  console.log(attractionApi, "<--attractionAPI");
   const [attractions, setAttractions] = useState([]);
   const [error, setError] = useState("");
 
@@ -52,11 +51,6 @@ export default function FeedPage({ user, handleLogout }) {
     <Grid.Row>
       <Grid.Column>
         <PageHeader handleLogout={handleLogout} user={user}/>
-      </Grid.Column>
-    </Grid.Row>
-    <Grid.Row>
-      <Grid.Column style={{ maxWidth: 450 }}>
-        {/* <AttractionForm handleAddAttraction={handleAddAttraction} /> */}
       </Grid.Column>
     </Grid.Row>
     <Grid.Row>

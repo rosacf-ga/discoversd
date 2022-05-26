@@ -23,12 +23,10 @@ async function index(req, res){
 }
 
 function create(req, res){
-  console.log(req.file, req.body, 'this is create method', req.user)
   try {
       const filePath = `${uuidv4()}/${req.file.originalname}`
       const params = {Bucket: process.env.BUCKET_NAME, Key: filePath, Body: req.file.buffer};
       s3.upload(params, async function(err, data){
-    console.log(err, ' from aws')
           const attraction = await Attraction.create({
             user: req.user,
             attractionName: req.body.attractionName,

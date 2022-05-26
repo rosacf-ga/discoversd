@@ -19,7 +19,9 @@ export default function AttractionCard({attraction, deleteAttraction, user}) {
     <Card style={card} key={attraction._id} raised>
     <AttractionImage photoUrl={attraction.photoUrl}/>
     <Card.Content>
-    <Link to={`/attractions/${attraction.attractionName}`}><Card.Header className='title'>{attraction.attractionName}</Card.Header></Link>
+    <Link to={`/attractions/${attraction.attractionName}`}>
+      <Card.Header className='title'>{attraction.attractionName}</Card.Header>
+    </Link>
     </Card.Content>
     {user && user._id === attraction.user._id ?
     <Card.Content extra textAlign={"right"}>

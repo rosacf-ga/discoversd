@@ -29,7 +29,7 @@ export function getAll() {
 }
 
 export function getAttraction(attractionName){
-  console.log(attractionName)
+  // console.log(attractionName)
   return fetch(BASE_URL + attractionName, {
     headers: {
       Authorization: "Bearer " + tokenService.getToken(),

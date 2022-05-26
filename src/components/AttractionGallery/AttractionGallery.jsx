@@ -1,5 +1,5 @@
 import React from 'react';
-import { Card, Dimmer, Segment, Image  } from 'semantic-ui-react';
+import { Card } from 'semantic-ui-react';
 import AttractionCard from '../AttractionCard/AttractionCard';
 import './AttractionGalley.css';
 
