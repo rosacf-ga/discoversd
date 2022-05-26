@@ -5,7 +5,7 @@
 ## **Screenshots**
 ![Home page](https://i.imgur.com/TbpM3rv.png)
 ![Feed page](https://i.imgur.com/GWry0SQ.png)
-![Attraction detail page](https://i.imgur.com/FXNgybg.png)
+![Attraction detail page](https://i.imgur.com/ByhUhnr.png)
 ![Add attraction form](https://i.imgur.com/PP2hQlA.png)
 
 
