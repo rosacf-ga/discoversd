@@ -20,10 +20,13 @@
 
 
 ## **Getting Started**
-Visit **Discover San Diego** [here](https://discoversd.herokuapp.com/)
-
 Check out my Trello planning board [here](https://trello.com/b/zSmCcskq/project-4)
 
+Visit **Discover San Diego** [here](https://discoversd.herokuapp.com/) 
+
+To use the app, you can log in with the following credentials:  
+username: *demo*  
+passsword: *1234*
  
 ## **Next Steps** 
 - Allow users to leave comments about an atraction in an attraction's detail page
