@@ -24,7 +24,7 @@ Check out my Trello planning board [here](https://trello.com/b/zSmCcskq/project-
 
 Visit **Discover San Diego** [here](https://discoversd.herokuapp.com/) 
 
-To use the app, you can log in with the following credentials:  
+To demo the app, you may log in with the following credentials:  
 username: *demo*  
 passsword: *1234*
  
