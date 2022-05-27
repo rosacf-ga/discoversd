@@ -33,3 +33,4 @@ passsword: *1234*
 - Allow users to be able to filter their results based on type of activity, price range, etc.
 - Allow users to be able to favorite an attraction and have it be stored in a 'Favorites' section
 - Add additional styling to create a mobile-friendly design
+- Incorporate Google Maps API to have a map with the attraction's location populate in its detail page
